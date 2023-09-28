@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+- name: aws
+  tables:
+  - name: trip_table
+    description: Ride information for each trip
+    meta:
+      source_type: aws
+      source_format: csv
+      path: s3a://foresight-tutorial/trip_fare/trip_table.csv
+      anon: true
+      infer_schema: true
+      header: true
+      delimiter: ','
+      batch_schedule: -1d
+      s3_endpoint_url: https://s3.us-west-2.amazonaws.com
+
