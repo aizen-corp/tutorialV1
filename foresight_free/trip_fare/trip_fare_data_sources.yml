@@ -10,9 +10,6 @@ sources:
       source_format: csv
       path: s3a://foresight-tutorial/trip_fare/trip_table.csv
       anon: true
-      infer_schema: true
-      header: true
       delimiter: ','
-      batch_schedule: -1d
       s3_endpoint_url: https://s3.us-west-2.amazonaws.com
 
