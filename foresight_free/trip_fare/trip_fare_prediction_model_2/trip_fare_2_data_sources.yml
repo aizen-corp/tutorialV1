@@ -9,10 +9,7 @@ sources:
       source_format: csv
       path: s3a://foresight-tutorial/trip_fare/hour_of_day_context.csv
       anon: true
-      infer_schema: true
-      header: true
       delimiter: ','
-      batch_schedule: -1d
       s3_endpoint_url: https://s3.us-west-2.amazonaws.com
 
   - name: holiday_weekend_context
@@ -22,10 +19,7 @@ sources:
       source_format: csv
       path: s3a://foresight-tutorial/trip_fare/holiday_weekend_context.csv
       anon: true
-      infer_schema: true
-      header: true
       delimiter: ','
-      batch_schedule: -1d
       s3_endpoint_url: https://s3.us-west-2.amazonaws.com
 
   - name: geo_area_context
@@ -35,8 +29,5 @@ sources:
       source_format: csv
       path: s3a://foresight-tutorial/trip_fare/geo_area_context.csv
       anon: true
-      infer_schema: true
-      header: true
       delimiter: ','
-      batch_schedule: -1d
       s3_endpoint_url: https://s3.us-west-2.amazonaws.com

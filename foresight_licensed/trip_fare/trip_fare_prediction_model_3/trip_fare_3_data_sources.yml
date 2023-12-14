@@ -2,10 +2,6 @@ version: 2
 
 sources:
   - name: kafka
-    quoting:
-      database: false
-      schema: false
-      identifier: false
     tables:
       - name: trip_events
         description: "Ride information for each trip"
@@ -14,7 +10,5 @@ sources:
           source_format: json
           url: <kafka server>:9092
           topic: tutorial_client_<xxxx_xxxxxx>_trip_table11
-          offset: latest
-          streaming_window: 2 seconds
           preprocessor: com.aizen.preprocessors.DefaultJsonPreprocessor
 
