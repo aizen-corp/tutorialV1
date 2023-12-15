@@ -39,7 +39,8 @@ using_foresight_options
             "featureset_name": "trip_events_aggr1",
             "source_features": ["sum_passenger_count"],
             "window_start_time": "-4h",
-            "window_end_time": "0d"
+            "window_end_time": "0d",
+            "params": {"missing_value":0}
         }]
     }
 )

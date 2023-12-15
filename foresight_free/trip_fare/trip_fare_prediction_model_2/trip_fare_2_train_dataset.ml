@@ -9,9 +9,9 @@ from
                                     'hourly_segment, is_holiday_or_weekend, pickup_geo_area, dropoff_geo_area') }} f
     from
     (
-        select from_utc_timestamp(pickup_datetime, "EST") as pickup_datetime,
-               cast(hour(from_utc_timestamp(pickup_datetime, "EST")) as bigint) as hour_of_day,
-               Date(from_utc_timestamp(pickup_datetime, "EST")) as calendar_day,
+        select cast(pickup_datetime as timestamp) as pickup_datetime,
+               cast(hour(pickup_datetime) as bigint) as hour_of_day,
+               Date(pickup_datetime) as calendar_day,
                pickup_zipcode, dropoff_zipcode, passenger_count, fare_amount
         from {{ source('aws','trip_table') }} limit 2000
     )
