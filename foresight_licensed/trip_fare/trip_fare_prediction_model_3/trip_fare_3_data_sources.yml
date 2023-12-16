@@ -9,6 +9,6 @@ sources:
           source_type: kafka
           source_format: json
           url: <kafka server>:9092
-          topic: tutorial_client_<xxxx_xxxxxx>_trip_table11
+          topic: tutorial_client_<xxxx_xxxxxx>_trip_table
           preprocessor: com.aizen.preprocessors.DefaultJsonPreprocessor
 
