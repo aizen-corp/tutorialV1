@@ -1,4 +1,4 @@
-select * from trip_fare_3_train_data limit {{ var('row_limit', 'all') }}
+select * from trip_fare_3_train_dataset limit {{ var('row_limit', 'all') }}
 using_foresight_options
 (
 	{
