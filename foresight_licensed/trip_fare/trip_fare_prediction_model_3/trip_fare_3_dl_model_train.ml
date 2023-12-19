@@ -20,8 +20,9 @@ using_foresight_options
             ],
             "trainer" : {
                 "batch_size": 2048,
-                "epochs": 100,
-                "early_stop": 5}
+                "epochs": 15,
+                "early_stop": 1
+            }
         }
     }
 )
