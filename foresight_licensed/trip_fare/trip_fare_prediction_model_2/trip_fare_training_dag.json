@@ -1,0 +1,45 @@
+{
+    "schedule_time":"2023-10-19 19:30:00",
+    "schedule_interval":"-1d",
+    "dag_jobs": [
+    {
+        "name": "start_featureset",
+        "command": "start featureset trip_fare_prediction_model_2/hour_of_day_context",
+        "start_delay_sec": 10 
+    },
+    {
+        "name": "create_featureset2",
+        "command": "start featureset trip_fare_prediction_model_2/holiday_weekend_context",
+        "start_delay_sec": 10 
+    },
+    {
+        "name": "create_featureset3",
+        "command": "start featureset trip_fare_prediction_model_2/geo_area_context",
+        "start_delay_sec": 10 
+    },
+    {
+        "name": "start_offline_featureview",
+        "command": "start featureview trip_fare_prediction_model_2/trip_fare_2_feature_view,offline",
+        "parent_name": [ "create_featureset3" ],
+        "start_delay_sec": 10 
+    },
+    {
+        "name": "start_online_featureview",
+        "command": "start featureview trip_fare_prediction_model_2/trip_fare_2_feature_view,online",
+        "parent_name": [ "start_offline_featureview" ],
+        "start_delay_sec": 10 
+    },
+    {
+        "name": "create_dataset",
+        "command": "start dataset trip_fare_prediction_model_2/trip_fare_2_train_dataset",
+        "parent_name": [ "start_offline_featureview" ],
+        "start_delay_sec": 10
+    },
+    {
+        "name": "start_training",
+        "command": "start training trip_fare_prediction_model_2/trip_fare_2_dl_model_train",
+        "parent_name": [ "create_dataset" ],
+        "start_delay_sec": 10 
+    }
+    ]
+}
