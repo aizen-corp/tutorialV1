@@ -1,0 +1,12 @@
+{
+    "schedule_time":"2023-10-19 19:30:00",
+    "schedule_interval":"-1d",
+    "dag_jobs": [
+    {
+        "name": "start_prediction",
+        "command": "start prediction trip_fare_dag/trip_fare_2_dl_model_1_serve",
+        "start_delay_sec": 2 
+    }
+    ]
+}
+
