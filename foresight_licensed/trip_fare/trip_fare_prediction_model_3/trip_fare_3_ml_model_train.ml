@@ -9,7 +9,6 @@ using_foresight_options
          "setup":
             {
                 "type": "regression",
-                "high_cardinality_features": ["pickup_zipcode", "dropoff_zipcode"],
                 "target": "fare_amount",
                 "numeric_features": ["passenger_count","is_holiday_or_weekend","total_passenger_count_4hr"],
                 "categorical_features": ["pickup_zipcode","dropoff_zipcode","hourly_segment","pickup_geo_area","dropoff_geo_area"],
