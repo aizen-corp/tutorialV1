@@ -9,7 +9,6 @@ using_foresight_options
          "setup":
             {
                 "type": "regression",
-                "high_cardinality_features": ["pickup_zipcode", "dropoff_zipcode"],
                 "categorical_features": ["pickup_zipcode", "dropoff_zipcode"],
                 "target": "fare_amount",
                 "numeric_features": ["passenger_count"],
