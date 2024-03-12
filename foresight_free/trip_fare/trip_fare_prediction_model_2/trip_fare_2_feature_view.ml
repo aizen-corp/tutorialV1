@@ -5,6 +5,14 @@ using_foresight_options
         "query_type": "featureview",
         "features": [
         {
+            "feature_name": "hour_of_day",
+            "expr": "pickup_datetime.getHours()"
+        },
+        {
+            "feature_name": "calendar_day",
+            "expr": "pickup_datetime.getCalendarDay()"
+        },
+        {
             "feature_name": "is_holiday_or_weekend",
             "featureset_name": "holiday_weekend_context",
             "source_features": ["is_holiday_or_weekend"]
